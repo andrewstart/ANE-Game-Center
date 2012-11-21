@@ -610,5 +610,24 @@
     return NULL;
 }
 
+- (FREObject) resetAchievements
+{
+	GKLocalPlayer* localPlayer = [GKLocalPlayer localPlayer];
+    if( localPlayer )
+    {
+        if ( localPlayer.isAuthenticated )
+        {
+			[GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error)
+			{
+				if (error != nil)
+					DISPATCH_STATUS_EVENT( self.context, "", resetAchievementsFailed );
+				else
+					DISPATCH_STATUS_EVENT( self.context, "", resetAchievementsComplete );
+			}];
+		}
+	}
+	return NULL;
+}
+
 
 @end

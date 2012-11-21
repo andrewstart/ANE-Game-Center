@@ -25,5 +25,7 @@
 #define loadLeaderboardFailed "LoadLeaderboardFailed"
 #define loadAchievementsComplete "LoadAchievementsComplete"
 #define loadAchievementsFailed "LoadAchievementsFailed"
+#define resetAchievementsComplete "ResetAchievementsComplete"
+#define resetAchievementsFailed "ResetAchievementsFailed"
 
 #endif

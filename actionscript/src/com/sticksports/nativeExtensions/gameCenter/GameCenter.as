@@ -23,6 +23,8 @@ package com.sticksports.nativeExtensions.gameCenter
 		public static var achievementsLoadComplete : GCSignal1 = new GCSignal1( Vector );
 		public static var achievementsLoadFailed : GCSignal0 = new GCSignal0();
 		public static var gameCenterViewRemoved : GCSignal0 = new GCSignal0();
+		public static var resetAchievementsComplete : GCSignal0 = new GCSignal0();
+		public static var resetAchievementsFailed : GCSignal0 = new GCSignal0();
 		
 		public static var isAuthenticating : Boolean;
 		
@@ -144,6 +146,12 @@ package com.sticksports.nativeExtensions.gameCenter
 					break;
 				case InternalMessages.loadAchievementsFailed :
 					achievementsLoadFailed.dispatch();
+					break;
+				case InternalMessages.resetAchievementsComplete:
+					resetAchievementsComplete.dispatch();
+					break;
+				case InternalMessages.resetAchievementsFailed:
+					resetAchievementsFailed.dispatch();
 					break;
 			}
 		}
@@ -312,6 +320,15 @@ package com.sticksports.nativeExtensions.gameCenter
 			if( localPlayer )
 			{
 				extensionContext.call( NativeMethods.getAchievements );
+			}
+		}
+		
+		public static function resetAchievements():void
+		{
+			assertIsAuthenticated();
+			if( localPlayer )
+			{
+				extensionContext.call( NativeMethods.resetAchievements );
 			}
 		}
 		

@@ -20,6 +20,8 @@ package com.sticksports.nativeExtensions.gameCenter
 		public static var achievementsLoadComplete : GCSignal1 = new GCSignal1( Vector );
 		public static var achievementsLoadFailed : GCSignal0 = new GCSignal0();
 		public static var gameCenterViewRemoved : GCSignal0 = new GCSignal0();
+		public static var resetAchievementsComplete : GCSignal0 = new GCSignal0();
+		public static var resetAchievementsFailed : GCSignal0 = new GCSignal0();
 		
 		public static var isAuthenticating : Boolean;
 		
@@ -104,6 +106,11 @@ package com.sticksports.nativeExtensions.gameCenter
 		}
 		
 		public static function getAchievements() : void
+		{
+			throwNotSupportedError();
+		}
+		
+		public static function resetAchievements():void
 		{
 			throwNotSupportedError();
 		}

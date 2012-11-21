@@ -21,6 +21,9 @@ package com.sticksports.nativeExtensions.gameCenter
 		internal static const loadAchievementsFailed : String = "LoadAchievementsFailed";
 		internal static const gameCenterViewRemoved : String = "GameCenterViewRemoved";
 		
+		internal static const resetAchievementsComplete : String = "ResetAchievementsComplete"
+		internal static const resetAchievementsFailed : String = "ResetAchievementsFailed"
+		
 		// Error messages dispatched from here
 		internal static const notSupportedError : String = "Game Kit is not supported on this device.";
 		internal static const authenticationNotAttempted : String = "You must call authenticateLocalPlayer to get the local player's Game Kit credentials.";

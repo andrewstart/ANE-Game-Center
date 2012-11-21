@@ -134,6 +134,9 @@ package com.sticksports.nativeExtensions.gameCenter.signals
 				{
 					node.next.previous = node.previous;
 				}
+				node.listener = null;
+				node.next = null;
+				node.previous = null;
 				delete nodes[ listener ];
 			}
 		}
@@ -146,6 +149,8 @@ package com.sticksports.nativeExtensions.gameCenter.signals
 				head = head.next;
 				listener.previous = null;
 				listener.next = null;
+				delete nodes[listener.listener];
+				listener.listener = null;
 			}
 			tail = null;
 			toAddHead = null;
